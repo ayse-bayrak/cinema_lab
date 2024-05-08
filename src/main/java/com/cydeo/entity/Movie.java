@@ -30,23 +30,16 @@ public class Movie extends BaseEntity{
     private LocalDate releaseDate;
 
     private int duration;
+
+    @Column(columnDefinition = "text")// regular String is creating 256 character, but when I define text, there is no limit
     private String summary;
 
-    public Movie(String name, BigDecimal price, Type type, State state, LocalDate releaseDate, int duration, String summary, List<Genre> genreList) {
-        this.name = name;
-        this.price = price;
-        this.type = type;
-        this.state = state;
-        this.releaseDate = releaseDate;
-        this.duration = duration;
-        this.summary = summary;
-        this.genreList = genreList;
-    }
 
     @ManyToMany
-    @JoinTable(name="MovieGenreRel",
+    @JoinTable(name="movie_genre_rel",
                     joinColumns =@JoinColumn(name="movie_id"),
                     inverseJoinColumns =@JoinColumn(name="genre_id"))
     private List<Genre>genreList;
-
+    //Why Set Is Better Than List in @ManyToMany there is very useful web site which is dzone.come
+    //In the article, it is proofed Set performance better than List performance
 }

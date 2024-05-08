@@ -1,11 +1,8 @@
 package com.cydeo.entity;
 
 
-import com.cydeo.enums.AccountRole;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import com.cydeo.enums.UserRole;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "account_details")
 @Data
 @NoArgsConstructor
-public class AccountDetail extends BaseEntity{
+public class Account extends BaseEntity{
 
     private String name;
     private String address;
@@ -24,6 +21,12 @@ public class AccountDetail extends BaseEntity{
     private String postalCode;
 
     @Enumerated(EnumType.STRING)
-    private AccountRole role;
+    private UserRole role;
+
+    /* Ozzy added
+    @OneToOne(mappedBy = "accountDetails")
+    private User user; // does it needed
+
+     */
 
 }

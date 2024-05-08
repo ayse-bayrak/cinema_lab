@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.springframework.validation.annotation.Validated;
 
+import java.math.BigDecimal;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -17,8 +19,8 @@ public class Location extends BaseEntity{
     @Size(max=12, min=2)
     private String name;
 
-    private String latitude;
-    private String longitude;
+    private BigDecimal latitude;
+    private BigDecimal longitude;
     private String country;
     private String city;
     private String state;

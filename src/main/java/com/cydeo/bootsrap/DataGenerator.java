@@ -21,11 +21,11 @@ public class DataGenerator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Cinema cinema1 = new Cinema("Antares", " Ayse Bayrak");
-        Cinema cinema2 = new Cinema("ACity", "Betul Bayrak");
+//        Cinema cinema1 = new Cinema("Antares", " Ayse Bayrak");
+//        Cinema cinema2 = new Cinema("ACity", "Betul Bayrak");
 
-        cinemaRepository.save(cinema1);
-        cinemaRepository.save(cinema2);
+//        cinemaRepository.save(cinema1);
+//        cinemaRepository.save(cinema2);
 
         Movie movie1 = new Movie();
         Movie movie2 = new Movie();
